@@ -1,5 +1,6 @@
 @import url(./global.css);
 
+
 /* Style général pour le formulaire */
 .auth-container {
     width: 100%;
@@ -10,12 +11,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-/* Logo et illustration */
-.auth-header img {
-    width: 120px;
-    margin-bottom: 20px;
 }
 
 /* Champs de formulaire */

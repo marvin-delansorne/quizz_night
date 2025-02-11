@@ -44,6 +44,3 @@ class Database
         return $this->pdo;
     }
 }
-
-// Utilisation de la classe Database
-$db = new Database($host, $dbname, $username, $password);
