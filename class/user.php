@@ -3,14 +3,16 @@ require_once '../includes/db_connexion.php';
 
 class User
 {
+    private $nom;
     private $username;
     private $email;
     private $password;
     private $confirm_password;
 
     // Constructeur
-    public function __construct($username, $email, $password, $confirm_password)
+    public function __construct($nom, $username, $email, $password, $confirm_password)
     {
+        $this->nom = $nom;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
@@ -45,8 +47,19 @@ class User
     public function getUserData()
     {
         return [
+            'nom' => $this->nom,
             'username' => $this->username,
             'email' => $this->email,
         ];
+    }
+
+    // Insérer un nouvel utilisateur dans la base de données
+    public function save()
+    {
+        global $db; // Assurez-vous que $db est accessible ici
+        $pdo = $db->getPDO();
+
+        $stmt = $pdo->prepare('INSERT INTO user (nom, username, email, password) VALUES (?, ?, ?, ?)');
+        return $stmt->execute([$this->nom, $this->username, $this->email, password_hash($this->password, PASSWORD_DEFAULT)]);
     }
 }

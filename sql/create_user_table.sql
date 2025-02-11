@@ -2,6 +2,7 @@ CREATE TABLE user
 (
     id INT
     AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR,
     username VARCHAR
     (50) NOT NULL UNIQUE,
     email VARCHAR

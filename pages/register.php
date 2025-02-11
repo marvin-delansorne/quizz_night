@@ -6,9 +6,9 @@ class Register
 
     private $user;
 
-    public function __construct($username, $email, $password, $confirm_password)
+    public function __construct($name, $username, $email, $password, $confirm_password)
     {
-        $this->user = new User($username, $email, $password, $confirm_password);
+        $this->user = new User($name, $username, $email, $password, $confirm_password);
     }
 
     // Traitement de l'inscription
@@ -27,13 +27,16 @@ class Register
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Instancier la classe Register avec les données envoyées via le formulaire
-    $register = new Register($_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirm_password']);
+    $register = new Register($_POST['name'], $_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirm_password']);
     $message = $register->processRegistration();
 }
 ?>
 
 <section class="container_card">
     <form action="register.php" method="POST">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required><br><br>
+
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required><br><br>
 
