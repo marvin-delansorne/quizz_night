@@ -12,7 +12,7 @@ class Auth {
      * Redirige l'utilisateur vers une page spécifique
      */
     public static function redirect($url) {
-        header("Location: $url");
+        header("Location: ../pages/admin.php");
         exit();
     }
 }
