@@ -1,0 +1,55 @@
+@import url(./global.css);
+
+
+/* Style général pour le formulaire */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--whitecolor);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Champs de formulaire */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--whitecolor);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Bouton de soumission */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primarycolor);
+    color: var(--whitecolor);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background: var(--primarycolor);
+}
+
+/* Lien d'inscription / connexion */
+.auth-footer {
+    margin-top: 15px;
+}
+
+.auth-footer a {
+    color: #D9008D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
