@@ -16,8 +16,8 @@
         </section>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="pages/register.php">Inscription</a></li>
             <li><a href="pages/login.php">Connexion</a></li>
+            <li><a href="pages/admin.html"></a>Compte</li>
         </ul>
     </nav>
 
@@ -30,6 +30,6 @@
             C'est le moment pour toi de briller et de crâner un max, la prochaine fois que tu viendras jouer avec ta team !
             On t'entends d'ici : "C'est moi qui l'ai inventée, celle-là !"
         </p>
-        <a href="submit_question.php" class="button">Proposer une question</a>
+        <a href="pages/login.php" class="button">Proposer une question</a>
     </section>
 </body>

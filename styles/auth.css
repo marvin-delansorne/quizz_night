@@ -33,7 +33,6 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
 .auth-form button:hover {
