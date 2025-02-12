@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body{
+    font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 10em;
+}
+
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.navbar{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    justify-content: end;
+    align-items: center;
+    gap: 70%;
+}
+
+.navbar_p{
+    margin-right: 10px;
+    display: flex;
+    gap: 5em;
+}
+
+.container_p1{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding:  40px;
+    border: solid 1px ;
+    box-shadow: 5px 4px 4px -2px #000000;
+}
+
+.container_p1 h1{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    align-items: center;
+}
+
+.women_img{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 400px;
+    height: 300px;
+}
+
+.container_p2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.container_p2 li{
+    list-style-type: none;
+}
+
+.popular_quizz{
+    width: 443px;
+    height: 62px;
+}
