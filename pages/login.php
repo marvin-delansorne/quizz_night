@@ -44,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Connexion</title>
     <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/style-login.css">
+    
 </head>
 <body>
 <header>
@@ -54,37 +56,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </li>
                 <div class="navbar_p">
                     <li>
-                        <a href="#">
+                        <a href="../index.php">
                             Home
                         </a>
                     </li>
-
                     <li>
-                        <a href="#">
+                        <a href="login.php">
                             Login
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Sign
-                        </a>
                     </li>
                 </div>
             </ul>
         </nav>
     </header>
-    <h1>Connexion</h1>
+    <img class="women_img" src="../img/img_p_home" alt="women_img">
     <?php if (!empty($error)) : ?>
         <p style="color: red;"><?php echo $error; ?></p>
     <?php endif; ?>
     <form method="POST" action="">
         <label for="email">Email de l'utilisateur</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="Veuillez entrez votre mail"required>
         <br>
         <label for="password">Mot de passe de l'utilisateur</label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password"placeholder="Veuillez entre votre mot de passe" required>
         <br>
-        <button type="submit">Se connecter</button>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

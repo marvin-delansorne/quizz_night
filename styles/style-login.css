@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap:7em;
+}
+
+
+
+form{
+display: flex;
+flex-direction: column;
+gap: 2em;
+}
+
+input{
+    width: 30%;
+    height: 50px;
+    align-self: center;
+    text-align:left;
+    border: transparent;
+    padding-left: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+button{
+    width: 30%;
+    height: 50px;
+    align-self: center;
+    color: white;
+    background-color: #F175B0;
+    border:  transparent;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.women_img{
+    width: 410px;
+    height: 329px;
+    position: absolute;
+    top: 60px;
+    right: 320px;
+}
+
+

@@ -25,7 +25,7 @@
                     </li>
 
                     <li>
-                        <a href="./pags/login.php">
+                        <a href="./pages/login.php">
                             Login
                         </a>
                     </li>
