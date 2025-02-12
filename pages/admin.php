@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style-admin.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="../styles/style-admin.css">
+    <link rel="stylesheet" href="../styles/global.css">
     <title>Admin</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <nav class="navbar">
             <ul class="navbar">
                 <li>
-                    <a><img src="/img/title_navbar.png" alt="title_home"></a>
+                    <a><img src="../img/title_navbar.png" alt="title_home"></a>
                 </li>
                 <div class="navbar_p">
                     <li>
@@ -41,11 +41,11 @@
                 <h1>
                     $USER
                 </h1>
-                <img src="/img/profil_admin.png" alt="profil_img">
+                <img src="../img/profil_admin.png" alt="profil_img">
                 <h1>
                     Mes quizz
                 </h1>
-                <img src="/img/gallery_profiladmin.png" alt="gallery_profiladmin">
+                <img src="../img/gallery_profiladmin.png" alt="gallery_profiladmin">
                
             </div>
             
@@ -57,13 +57,13 @@
                 
                 <ul class = "badge">
                     <li>
-                        <img src="/img/Badge-1.png" alt="badge1">
+                        <img src="../img/Badge-1.png" alt="badge1">
                     </li>
                     <li>
-                        <img src="/img/Badge-2.png" alt="badge2">
+                        <img src="../img/Badge-2.png" alt="badge2">
                     </li>
                     <li>
-                        <img src="/img/Badge.png" alt="badge3">
+                        <img src="../img/Badge.png" alt="badge3">
                     </li>
                 </ul>
             </div>

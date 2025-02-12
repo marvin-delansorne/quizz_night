@@ -1,54 +1,90 @@
 <?php
-require_once '../includes/db_connexion.php';
-require_once '../class/user.php';
+require_once '../class/Database.php';
+require_once '../class/User.php';
+require_once '../class/Auth.php';
 
-$message = '';
+// Initialisation des variables
+$error = '';
 
-// Vérifie les données envoyées via le formulaire
+// Vérifie si le formulaire de connexion est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $pseudo = trim($_POST['pseudo']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = $_POST['password'];
 
-    if (!empty($pseudo)) {
-        // Instancie la classe User
-        $user = new User($host, $dbname, $username, $password);
-        if ($user->loginOrRegister($pseudo)) {
-            $message = "Connexion réussie ! Bienvenue, $pseudo.";
-        } else {
-            $message = "Erreur lors de la connexion.";
-        }
+    // Validation des champs
+    if (empty($email) || empty($password)) {
+        $error = "Tous les champs sont obligatoires.";
     } else {
-        $message = "Veuillez entrer un pseudo.";
+        try {
+            // Connexion à la base de données
+            $database = new Database();
+            $userModel = new User($database->getConnection());
+
+            // Recherche de l'utilisateur par email
+            $user = $userModel->findByEmail($email);
+
+            // Vérification du mot de passe
+            if ($user && $userModel->verifyPassword($user, $password)) {
+                // Création des cookies et redirection
+                Auth::setCookies($user);
+                Auth::redirect('../pages/profile.php');
+            } else {
+                $error = "Email ou mot de passe incorrect.";
+            }
+        } catch (PDOException $e) {
+            $error = "Erreur de base de données : " . $e->getMessage();
+        }
     }
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ça Quizz ou Quoi ?</title>
-    <link rel="stylesheet" href="../styles/auth.css">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../styles/global.css">
 </head>
-
 <body>
-    <nav class="navbar">
-        <section class="logo">
-            <span class="site-title">ÇA QUIZZ OU QUOI ?</span>
-        </section>
-        <ul>
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="register.php">Inscription</a></li>
-            <li><a href="admin.php">Admin</a></li>
-        </ul>
-    </nav>
+<header>
+        <nav class="navbar">
+            <ul class="navbar">
+                <li>
+                    <a><img src="../img/title_navbar.png" alt="title_home"></a>
+                </li>
+                <div class="navbar_p">
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
 
-    <section class="auth-container">
-        <form action="login.php" method="POST" class="auth-form">
-            <label for="pseudo">Entrer votre pseudo</label>
-            <input type="text" id="pseudo" name="pseudo" placeholder="Entrer votre pseudo" required>
-            <button type="submit">Enregistrer</button>
-        </form>
-        <?php if (!empty($message)): ?>
-            <p><?php echo $message; ?></p>
-        <?php endif; ?>
-    </section>
+                    <li>
+                        <a href="#">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Sign
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <h1>Connexion</h1>
+    <?php if (!empty($error)) : ?>
+        <p style="color: red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+    <form method="POST" action="">
+        <label for="email">Email de l'utilisateur</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="password">Mot de passe de l'utilisateur</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <button type="submit">Se connecter</button>
+    </form>
 </body>
+</html>
