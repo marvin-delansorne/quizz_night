@@ -22,24 +22,19 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.navbar{
     display: flex;
+    list-style: none;
     justify-content: space-around;
-    /* Pour aligner à gauche et à droite */
+    justify-content: end;
     align-items: center;
-    padding: 10px 60px;
+    gap: 70%;
 }
 
-.site-title {
-    font-size: 38px;
-    font-weight: bold;
-    color: var(--primarycolor);
-}
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 20px;
 }
 
 .navbar ul li a {
@@ -52,4 +47,10 @@ body {
 .navbar ul li a:hover {
     color: #007BFF;
     /* Changer la couleur au survol */
+}
+
+.navbar_p{
+    margin-right: 10px;
+    display: flex;
+    gap: 5em;
 }
