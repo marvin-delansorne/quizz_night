@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --primarycolor: #D9008D;
+    --blackcolor: #000;
+    --whitecolor: #fff;
+
+}
+
+body {
+    font-family: 'Fredoka One', sans-serif;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    justify-content: end;
+    align-items: center;
+    gap: 70%;
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    /* Ou une autre couleur */
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    color: #007BFF;
+    /* Changer la couleur au survol */
+}
+
+.navbar_p{
+    margin-right: 10px;
+    display: flex;
+    gap: 5em;
+}

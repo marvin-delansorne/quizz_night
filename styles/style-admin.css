@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+  }
+
+
+.achievement{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3em;
+}
+
+.profil_admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 0 20px;
+    border-radius: 15px;
+}
+
+.badge{
+    display: flex;
+}
+
+.badge_all{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    padding: 0 50px;
+}
+
+.badge_all ul{
+    list-style-type: none;
+}
+
+.create_quizz {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding-top: 3em;
+}
+
+
