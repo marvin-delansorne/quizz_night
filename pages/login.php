@@ -1,44 +1,24 @@
 <?php
-include '../class/user.php';
+require_once '../includes/db_connexion.php';
+require_once '../class/user.php';
 
-class Login
-{
-    private $username;
-    private $password;
-    private $db;
+$message = '';
 
-    public function __construct($username, $password)
-    {
-        $this->username = $username;
-        $this->password = $password;
-
-        // Instancier la classe Database
-        global $host, $dbname, $username, $password;
-        $this->db = new Database($host, $dbname, $username, $password);
-    }
-
-    // Traitement de la connexion
-    public function processLogin()
-    {
-        $pdo = $this->db->getPDO();
-        $stmt = $pdo->prepare('SELECT * FROM user WHERE username = ?');
-        $stmt->execute([$this->username]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && password_verify($this->password, $user['password'])) {
-            // Connexion réussie
-            return "Connexion réussie !";
-        } else {
-            // Échec de la connexion
-            return "Nom d'utilisateur ou mot de passe incorrect.";
-        }
-    }
-}
-
+// Vérifie les données envoyées via le formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Instancier la classe Login avec les données envoyées via le formulaire
-    $login = new Login($_POST['username'], $_POST['password']);
-    $message = $login->processLogin();
+    $pseudo = trim($_POST['pseudo']);
+
+    if (!empty($pseudo)) {
+        // Instancie la classe User
+        $user = new User($host, $dbname, $username, $password);
+        if ($user->loginOrRegister($pseudo)) {
+            $message = "Connexion réussie ! Bienvenue, $pseudo.";
+        } else {
+            $message = "Erreur lors de la connexion.";
+        }
+    } else {
+        $message = "Veuillez entrer un pseudo.";
+    }
 }
 ?>
 
@@ -56,25 +36,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </section>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="pages/register.php">Inscription</a></li>
-            <li><a href="login.php">Connexion</a></li>
+            <li><a href="register.php">Inscription</a></li>
+            <li><a href="admin.php">Admin</a></li>
         </ul>
     </nav>
+
     <section class="auth-container">
         <form action="login.php" method="POST" class="auth-form">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required><br><br>
-
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required><br><br>
-
-            <button type="submit">Se connecter</button>
+            <label for="pseudo">Entrer votre pseudo</label>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Entrer votre pseudo" required>
+            <button type="submit">Enregistrer</button>
         </form>
-
-        <?php if (isset($message)): ?>
+        <?php if (!empty($message)): ?>
             <p><?php echo $message; ?></p>
         <?php endif; ?>
-
-        <a href="pages/register.php"><span class="connexion">Pas encore inscrit? Cliquez ici !</span></a>
     </section>
 </body>
