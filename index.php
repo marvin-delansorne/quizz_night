@@ -4,39 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style-home.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="./styles/style-home.css">
+    <link rel="stylesheet" href="./styles/global.css">
     <title>Quizz Night</title>
 </head>
 
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul class="navbar">
-                <li>
-                    <a><img src="/img/title_navbar.png" alt="title_home"></a>
-                </li>
-                <div class="navbar_p">
-                    <li>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Login
-                        </a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-
-
+    <?php require_once 'includes/navbar.php'; ?>
     <main>
-        <img class="women_img" src="/img/img_p_home.png" alt="img_home">
+        <img class="women_img" src="./img/img_p_home.png" alt="img_home">
         <section class="container_p1">
 
             <h1>
@@ -54,13 +31,13 @@
             </p>
         </section>
         <section class="container_p2">
-            <img class="popular_quizz" src="/img/pupular_quizz.png" alt="popular_quizz">
+            <img class="popular_quizz" src="./img/pupular_quizz.png" alt="popular_quizz">
             <ul>
                 <li>
-                    <img src="/img/gallery_img1.png" alt="gallery_img1">
+                    <img src="./img/gallery_img1.png" alt="gallery_img1">
                 </li>
                 <li>
-                    <img src="/img/gallery_img2.png" alt="gallery_img2">
+                    <img src="./img/gallery_img2.png" alt="gallery_img2">
                 </li>
             </ul>
         </section>

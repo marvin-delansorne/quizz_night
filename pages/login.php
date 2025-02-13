@@ -30,16 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <nav class="navbar">
-        <section class="logo">
-            <span class="site-title">ÇA QUIZZ OU QUOI ?</span>
-        </section>
-        <ul>
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="register.php">Inscription</a></li>
-            <li><a href="admin.php">Admin</a></li>
-        </ul>
-    </nav>
+    <?php require_once './includes/navbar.php'; ?>
 
     <section class="auth-container">
         <form action="login.php" method="POST" class="auth-form">
