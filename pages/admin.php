@@ -13,15 +13,15 @@ $pdo = $database->getPDO();
 $quizHandler = new QuizHandler($pdo);
 
 // Vérification du formulaire de nombre de questions
-$numQuestions = isset($_POST['nb_questions']) ? intval($_POST['nb_questions']) : 0;
+$numQuestion = isset($_POST['nb_question']) ? intval($_POST['nb_question']) : 0;
 
 // Traitement du formulaire de création de quiz (questions)
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['questions'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['question'])) {
     $titre = htmlspecialchars($_POST['titre']);
-    $questions = $_POST['questions'];
+    $question = $_POST['question'];
 
     // Créer le quiz
-    if ($quizHandler->createQuiz($titre, $questions)) {
+    if ($quizHandler->createQuiz($titre, $question)) {
         $successMessage = "Quiz créé avec succès !";
     } else {
         $errorMessage = "Erreur lors de la création du quiz.";
@@ -73,28 +73,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['ques
             <h1>Créer votre propre quizz !</h1>
 
             <?php if (isset($successMessage)) : ?>
-                <p style="color: green;"><?php echo $successMessage; ?></p>
+                <?php echo $successMessage; ?></p>
             <?php endif; ?>
             <?php if (isset($errorMessage)) : ?>
-                <p style="color: red;"><?php echo $errorMessage; ?></p>
+                <?php echo $errorMessage; ?></p>
             <?php endif; ?>
 
             <!-- 1ère étape : Choix du nombre de questions -->
-            <?php if ($numQuestions == 0) : ?>
+            <?php if ($numQuestion == 0) : ?>
                 <form method="POST" action="">
                     <div>
-                        <label for="nb_questions">Nombre de questions :</label>
-                        <input type="number" id="nb_questions" name="nb_questions" min="1" value="3">
+                        <label for="nb_question">Nombre de questions :</label>
+                        <input type="number" id="nb_question" name="nb_question" min="1" value="3">
                     </div>
                     <input type="submit" value="Valider">
                 </form>
             <?php endif; ?>
 
             <!-- 2ème étape : Formulaire de création du quiz avec questions -->
-            <?php if ($numQuestions > 0) : ?>
+            <?php if ($numQuestion > 0) : ?>
                 <?php
                 $quizForm = new QuizForm();
-                $quizForm->displayForm($numQuestions);
+                $quizForm->displayForm($numQuestion);
                 ?>
             <?php endif; ?>
 

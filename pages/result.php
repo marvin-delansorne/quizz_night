@@ -14,7 +14,7 @@ $quizId = isset($_POST['quiz_id']) ? (int)$_POST['quiz_id'] : 0;
 
 // Initialiser le score
 $score = 0;
-$totalQuestions = 0;
+$totalQuestion = 0;
 
 // Parcourir les réponses soumises
 foreach ($_POST as $key => $value) {
@@ -28,12 +28,12 @@ foreach ($_POST as $key => $value) {
             $score++;
         }
 
-        $totalQuestions++;
+        $totalQuestion++;
     }
 }
 
 // Calculer le pourcentage de bonnes réponses
-$percentage = ($totalQuestions > 0) ? round(($score / $totalQuestions) * 100) : 0;
+$percentage = ($totalQuestion > 0) ? round(($score / $totalQuestion) * 100) : 0;
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ $percentage = ($totalQuestions > 0) ? round(($score / $totalQuestions) * 100) : 
     <main>
         <h1>Résultats du Quiz</h1>
         <div class="result-container">
-            <p>Vous avez répondu correctement à <strong><?php echo $score; ?></strong> questions sur <strong><?php echo $totalQuestions; ?></strong>.</p>
+            <p>Vous avez répondu correctement à <strong><?php echo $score; ?></strong> questions sur <strong><?php echo $totalQuestion; ?></strong>.</p>
             <p>Votre score est de <strong><?php echo $percentage; ?>%</strong>.</p>
         </div>
         <a href="../index.php" class="btn-retour">Retour à l'accueil</a>

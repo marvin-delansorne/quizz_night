@@ -17,7 +17,7 @@ class CreateQuizz {
 
     // Crée une nouvelle question
     public function createQuestion($quizId, $texte) {
-        $stmt = $this->pdo->prepare('INSERT INTO questions (quiz_id, texte) VALUES (?, ?)');
+        $stmt = $this->pdo->prepare('INSERT INTO question (quiz_id, texte) VALUES (?, ?)');
         $stmt->execute([$quizId, $texte]);
         return $this->pdo->lastInsertId(); // Retourne l'ID de la question créée
     }
@@ -29,7 +29,7 @@ class CreateQuizz {
     }
 
     // Crée un quiz complet avec ses questions et réponses
-    public function createFullQuiz($titre, $questions) {
+    public function createFullQuiz($titre, $question) {
         try {
             // Commencer une transaction
             $this->pdo->beginTransaction();

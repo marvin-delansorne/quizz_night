@@ -1,7 +1,7 @@
 <?php
 class QuizForm {
     // Méthode pour afficher le formulaire de création de quiz
-    public function displayForm($numQuestions = 3) {
+    public function displayForm($numQuestion = 3) {
         ?>
         <form method="POST" action="">
             <div>
@@ -13,7 +13,7 @@ class QuizForm {
             <div id="questions_container">
                 <?php
                 // Afficher dynamiquement les questions en fonction du nombre
-                for ($i = 0; $i < $numQuestions; $i++) {
+                for ($i = 0; $i < $numQuestion; $i++) {
                     $this->displayQuestion($i);
                 }
                 ?>
@@ -29,7 +29,7 @@ class QuizForm {
         ?>
         <div class="question">
             <label>Question <?php echo $index + 1; ?> :</label>
-            <input type="text" name="questions[<?php echo $index; ?>][texte]" required>
+            <input type="text" name="question[<?php echo $index; ?>][texte]" required>
             <?php $this->displayReponses($index); ?>
         </div>
         <?php
@@ -41,8 +41,8 @@ class QuizForm {
             ?>
             <div>
                 <label>Réponse <?php echo $i + 1; ?> :</label>
-                <input type="text" name="questions[<?php echo $index; ?>][reponses][<?php echo $i; ?>][texte]" required>
-                <input type="checkbox" name="questions[<?php echo $index; ?>][reponses][<?php echo $i; ?>][est_correcte]"> Correcte
+                <input type="text" name="question[<?php echo $index; ?>][reponses][<?php echo $i; ?>][texte]" required>
+                <input type="checkbox" name="question[<?php echo $index; ?>][reponses][<?php echo $i; ?>][est_correcte]"> Correcte
             </div>
             <?php
         }

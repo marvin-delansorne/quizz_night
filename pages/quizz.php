@@ -25,7 +25,7 @@ if (!$quiz) {
 }
 
 // Récupérer les questions du quiz
-$questions = $questionManager->getQuestionsByQuizId($quizId);
+$questions = $questionManager->getQuestionByQuizId($quizId);
 ?>
 
 <!DOCTYPE html>

@@ -8,8 +8,8 @@ class Question {
     }
 
     // Récupérer les questions d'un quiz
-    public function getQuestionsByQuizId($quizId) {
-        $stmt = $this->pdo->prepare('SELECT * FROM questions WHERE quiz_id = ?');
+    public function getQuestionByQuizId($quizId) {
+        $stmt = $this->pdo->prepare('SELECT * FROM question WHERE quiz_id = ?');
         $stmt->execute([$quizId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
