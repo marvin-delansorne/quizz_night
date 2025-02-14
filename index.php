@@ -1,3 +1,18 @@
+<?php
+require './class/Database.php';
+require './class/Quiz.php';
+
+// Connexion à la base de données
+$database = new Database();
+$pdo = $database->getPDO();
+
+// Instancier la classe Quiz
+$quizManager = new Quiz($pdo);
+
+// Récupérer tous les quiz depuis la base de données
+$quizzes = $quizManager->getAllQuizzes();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,15 +47,61 @@
         </section>
         <section class="container_p2">
             <img class="popular_quizz" src="./img/pupular_quizz.png" alt="popular_quizz">
-            <ul>
+
+            <!-- Section des images statiques -->
+            <ul class="children_img">
                 <li>
-                    <img src="./img/gallery_img1.png" alt="gallery_img1">
+                    <a href="#">
+                        <img src="./img/gallery_img1.png" alt="gallery_img1">
+                    </a>
                 </li>
                 <li>
-                    <img src="./img/gallery_img2.png" alt="gallery_img2">
+                    <a href="#">
+                        <img src="./img/gallery_img2.png" alt="gallery_img2">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/gallery_img3.png" alt="gallery_img3">
+                    </a>
                 </li>
             </ul>
+            <ul class="children_img">
+                <li>
+                    <a href="#">
+                        <img src="./img/gallery_img4.png" alt="gallery_img4">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/gallery_img5.png" alt="gallery_img5">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/gallery_img6.png" alt="gallery_img6">
+                    </a>
+                </li>
+            </ul>
+            <!-- Section des quiz disponibles -->
+            <h2>Quiz disponibles</h2>
+
+            <?php if (empty($quizzes)) : ?>
+                <p><span>Aucun quiz disponible pour le moment.<span></p>
+            <?php else : ?>
+
+                <?php foreach ($quizzes as $quiz) : ?>
+                    <ul class="choiceQuizz">
+                        <li>
+                            <a class="choiceQuizz" href="./pages/quizz.php?id=<?php echo $quiz['id']; ?>">
+                                <?php echo htmlspecialchars($quiz['titre']); ?>
+                            </a>
+                        </li>
+                    </ul>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </section>
+
     </main>
     <footer>
     </footer>

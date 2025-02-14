@@ -1,44 +1,26 @@
 <?php
-// Informations de connexion
-$host = 'localhost';
-$dbname = 'quizz_night'; // Nom de la base
-$username = 'root'; // Par défaut pour phpMyAdmin
-$password = 'root';
 
+// classes/Database.php
 class Database
 {
-    private $host;
-    private $dbname;
-    private $username;
-    private $password;
     private $pdo;
 
-    public function __construct($host, $dbname, $username, $password)
+    public function __construct()
     {
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->username = $username;
-        $this->password = $password;
+        // Connexion à la base de données
+        $dsn = 'mysql:host=localhost;dbname=quizz_night;charset=utf8';
+        $username = 'root'; // Remplace par ton nom d'utilisateur MySQL
+        $password = 'root'; // Remplace par ton mot de passe MySQL
 
         try {
-            // Créer une connexion avec la base "mysql" pour la création de la base
-            $this->pdo = new PDO("mysql:host={$this->host}", $this->username, $this->password);
+            $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Vérifier si la base existe, sinon la créer
-            $this->pdo->exec("CREATE DATABASE IF NOT EXISTS {$this->dbname}");
-            echo "Base de données créée ou déjà existante.<br>";
-
-            // Se connecter à la base nouvellement créée
-            $this->pdo = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            echo 'Connexion réussie à la base de données!<br>';
         } catch (PDOException $e) {
-            echo 'Une erreur est survenue : ' . $e->getMessage();
+            die("Erreur de connexion à la base de données : " . $e->getMessage());
         }
     }
 
+    // Retourne l'objet PDO
     public function getPDO()
     {
         return $this->pdo;
