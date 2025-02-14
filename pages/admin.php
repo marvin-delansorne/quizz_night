@@ -23,10 +23,7 @@
                     Mes quizz
                 </h1>
                 <img src="/img/gallery_profiladmin.png" alt="gallery_profiladmin">
-
             </div>
-
-
             <div class="badge_all">
                 <h1>
                     Badge
@@ -47,10 +44,9 @@
         </section>
         <section class="create_quizz">
             <h1>
-                Creer votre porpre quizz !
+                Creer votre propre quizz !
             </h1>
-            <input type="button" value="Créer votre propre quizz">
-
+            <a href="./create_quiz_form.php">ffffff</a>
         </section>
     </main>
 
