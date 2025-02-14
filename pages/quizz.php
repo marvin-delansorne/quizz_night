@@ -40,24 +40,7 @@ $questions = $questionManager->getQuestionsByQuizId($quizId);
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul class="navbar">
-                <li>
-                    <a href="../index.php"><img src="../img/title_navbar.png" alt="title_home"></a>
-                </li>
-                <div class="navbar_p">
-                    <li>
-                        <a href="../index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="./login.php">Login</a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-
+    <?php require_once '../includes/navbar.php'; ?>
     <main>
         <h1><?php echo htmlspecialchars($quiz['titre']); ?></h1>
         <form method="POST" action="./result.php">

@@ -48,41 +48,6 @@ $quizzes = $quizManager->getAllQuizzes();
         <section class="container_p2">
             <img class="popular_quizz" src="./img/pupular_quizz.png" alt="popular_quizz">
 
-            <!-- Section des images statiques -->
-            <ul class="children_img">
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img1.png" alt="gallery_img1">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img2.png" alt="gallery_img2">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img3.png" alt="gallery_img3">
-                    </a>
-                </li>
-            </ul>
-            <ul class="children_img">
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img4.png" alt="gallery_img4">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img5.png" alt="gallery_img5">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./img/gallery_img6.png" alt="gallery_img6">
-                    </a>
-                </li>
-            </ul>
             <!-- Section des quiz disponibles -->
             <h2>Quiz disponibles</h2>
 

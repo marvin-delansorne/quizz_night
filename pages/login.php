@@ -50,29 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul class="navbar">
-                <li>
-                    <a><img src="../img/title_navbar.png" alt="title_home"></a>
-                </li>
-                <div class="navbar_p">
-                    <li>
-                        <a href="../index.php">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.php">
-                            Login
-                        </a>
-                    </li>
-                    <li>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-    </header>
+    <?php require_once '../includes/navbar.php'; ?>
     <img class="women_img" src="../img/img_p_home" alt="women_img">
     <?php if (!empty($error)) : ?>
         <p style="color: red;"><?php echo $error; ?></p>

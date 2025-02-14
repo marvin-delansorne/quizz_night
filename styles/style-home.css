@@ -1,43 +1,41 @@
-
-
-body{
+body {
     display: flex;
-  flex-direction: column;
-  gap: 10em;
+    flex-direction: column;
+    gap: 10em;
 }
 
 
-.container_p1{
+.container_p1 {
     display: flex;
     flex-direction: column;
     gap: 2em;
     margin-left: 10%;
     margin-right: 10%;
-    padding:  40px;
-    border: solid 1px ;
+    padding: 40px;
+    border: solid 1px;
     box-shadow: 5px 4px 4px -2px #000000;
 }
 
-.container_p1 h1{
+.container_p1 h1 {
     text-align: center;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     gap: 5em;
     align-items: center;
 }
 
-.women_img{
+.women_img {
     position: absolute;
-    top: 50px; 
+    top: 50px;
     left: 10px;
     width: 400px;
     height: 300px;
 }
 
-.container_p2{
+.container_p2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,34 +43,12 @@ main{
     gap: 2em;
 }
 
-.container_p2 li{
+.container_p2 li {
     list-style-type: none;
     text-decoration: none;
 }
 
-.popular_quizz{
+.popular_quizz {
     width: 443px;
     height: 62px;
 }
-
-.children_img{
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 4em;
-}
-
-.children_img img{
-    width: 250px;
-    height: 200px;
-    -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
-.children_img a:hover img{
-    -webkit-transform: scale(1.1);
-	transform: scale(1.1);
-}
-

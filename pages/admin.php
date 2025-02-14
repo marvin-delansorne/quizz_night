@@ -42,25 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['ques
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul class="navbar">
-                <li><a><img src="../img/title_navbar.png" alt="title_home"></a></li>
-                <div class="navbar_p">
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="#">Sign</a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
+    <?php require_once '../includes/navbar.php'; ?>
     <main>
         <section class="achievement">
             <div class="profil_admin">
                 <h1><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Invité'; ?></h1>
                 <img src="../img/profil_admin.png" alt="profil_img">
                 <h1>Mes quizz</h1>
-                <img src="../img/gallery_profiladmin.png" alt="gallery_profiladmin">
             </div>
             <div class="badge_all">
                 <h1>Badge</h1>
