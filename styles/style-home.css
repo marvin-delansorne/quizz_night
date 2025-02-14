@@ -47,6 +47,7 @@ main{
 
 .container_p2 li{
     list-style-type: none;
+    text-decoration: none;
 }
 
 .popular_quizz{
@@ -74,7 +75,4 @@ main{
     -webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
-
-
-
 
