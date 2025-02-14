@@ -95,23 +95,25 @@ $quizzes = $quizManager->getAllQuizzes();
                     </a>
                 </li>
             </ul>
-
             <!-- Section des quiz disponibles -->
-            <h2>Quiz disponibles</h2>
-            <?php if (empty($quizzes)) : ?>
-                <p>Aucun quiz disponible pour le moment.</p>
-            <?php else : ?>
-                <ul class="quiz-list">
-                    <?php foreach ($quizzes as $quiz) : ?>
-                        <li>
-                            <a href="./pages/quizz.php?id=<?php echo $quiz['id']; ?>">
-                                <?php echo htmlspecialchars($quiz['titre']); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-        </section>
+                        <h2>Quiz disponibles</h2>
+                    
+                        <?php if (empty($quizzes)) : ?>
+                            <p><span>Aucun quiz disponible pour le moment.<span></p>
+                        <?php else : ?>
+                            
+                                <?php foreach ($quizzes as $quiz) : ?>
+                                        <ul class = "choiceQuizz">
+                                            <li>
+                                                <a  class="choiceQuizz" href="./pages/quizz.php?id=<?php echo $quiz['id']; ?>">
+                                                    <?php echo htmlspecialchars($quiz['titre']) ; ?>
+                                                </a>
+                                        </li>
+                                        </ul>
+                                <?php endforeach; ?>
+                        <?php endif; ?>
+                </section>
+        
     </main>
     <footer>
     </footer>

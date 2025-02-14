@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Connexion à la base de données
             $database = new Database();
-            $userModel = new User($database->getConnection());
+            $userModel = new User($database->getPDO());
 
             // Recherche de l'utilisateur par email
             $user = $userModel->findByEmail($email);
