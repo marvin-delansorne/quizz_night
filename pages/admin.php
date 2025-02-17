@@ -42,7 +42,7 @@ $quizzes = $quizManager->getAllQuizzes();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style-admin.css">
     <link rel="stylesheet" href="../styles/global.css">
-    <title>Admin</title>
+    <title>Administrateur</title>
 </head>
 
 <body>
