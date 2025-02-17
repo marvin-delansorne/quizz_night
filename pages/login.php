@@ -1,5 +1,4 @@
 <?php
-require_once '../includes/db_connexion.php';
 require_once '../class/user.php';
 
 $message = '';
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <?php require_once './includes/navbar.php'; ?>
+    <?php require_once '../includes/navbar.php'; ?>
 
     <section class="auth-container">
         <form action="login.php" method="POST" class="auth-form">
