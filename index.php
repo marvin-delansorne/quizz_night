@@ -26,7 +26,16 @@ $quizzes = $quizManager->getAllQuizzes();
 
 
 <body>
-    <?php require_once 'includes/navbar.php'; ?>
+<header>
+    <nav class="navbar">
+        <ul class="navbar">
+            <li><a><img src="./img/title_navbar.png" alt="title_home"></a></li>
+            <section class="navbar_p">
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./pages/login.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
     <main>
         <img class="women_img" src="./img/img_p_home.png" alt="img_home">
         <section class="container_p1">
