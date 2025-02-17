@@ -52,7 +52,7 @@ $quizzes = $quizManager->getAllQuizzes();
             <div class="profil_admin">
                 <h1><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Invité'; ?></h1>
 
-                <h1>Mes quizz</h1>
+                <h1>Quizz Disponibles</h1>
                 <ul>
                     <?php foreach ($quizzes as $quiz) : ?>
                         <li><a href="quizz.php?id=<?php echo $quiz['id']; ?>"><?php echo htmlspecialchars($quiz['titre']); ?></a></li>
