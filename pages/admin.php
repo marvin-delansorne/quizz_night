@@ -4,13 +4,15 @@ require '../class/Database.php';
 require '../class/CreateQuizz.php';
 require '../class/QuizzForm.php';
 require '../class/QuizzHandler.php';
+require '../class/Quiz.php';
 
 // Connexion à la base de données
 $database = new Database();
 $pdo = $database->getPDO();
 
-// Instancier la classe QuizHandler
+// Instancier les classes
 $quizHandler = new QuizHandler($pdo);
+$quizManager = new Quiz($pdo);
 
 // Vérification du formulaire de nombre de questions
 $numQuestions = isset($_POST['nb_questions']) ? intval($_POST['nb_questions']) : 0;
@@ -28,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['ques
     }
 }
 
+// Récupérer tous les quiz
+$quizzes = $quizManager->getAllQuizzes();
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre'], $_POST['ques
         <section class="achievement">
             <div class="profil_admin">
                 <h1><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Invité'; ?></h1>
-                <img src="../img/profil_admin.png" alt="profil_img">
+
                 <h1>Mes quizz</h1>
+                <ul>
+                    <?php foreach ($quizzes as $quiz) : ?>
+                        <li><a href="quizz.php?id=<?php echo $quiz['id']; ?>"><?php echo htmlspecialchars($quiz['titre']); ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
             <div class="badge_all">
                 <h1>Badge</h1>
