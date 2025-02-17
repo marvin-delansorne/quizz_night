@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+}
+
+
+.container_p1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 40px;
+    border: solid 1px;
+    box-shadow: 5px 4px 4px -2px #000000;
+}
+
+.container_p1 h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    align-items: center;
+}
+
+.women_img {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 400px;
+    height: 300px;
+}
+
+.container_p2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.container_p2 li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.popular_quizz {
+    width: 443px;
+    height: 62px;
+}
